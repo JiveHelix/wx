@@ -17,6 +17,11 @@ if(WX_NOT_SUBPROJECT)
     option(ENABLE_UNITY "Enable Unity builds of projects" OFF)
 endif()
 
+add_library(wxshim INTERFACE)
+
+# Projects that include this project must #include "pex/<header-name>"
+target_include_directories(wxshim INTERFACE ${PROJECT_SOURCE_DIR})
+
 add_subdirectory(wxWidgets)
 
 if(ENABLE_UNITY)
