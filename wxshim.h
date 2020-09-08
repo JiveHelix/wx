@@ -20,8 +20,9 @@
         TransformProcessType(&psn, kProcessTransformToForegroundApplication); \
         return wxEntry(argc, argv);                                           \
     }
-#endif
+#endif // __WXMAC__
 
+#endif // not defined wxIMPLEMENT_WXWIN_MAIN
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
